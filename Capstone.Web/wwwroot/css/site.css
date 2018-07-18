@@ -67,6 +67,23 @@ body {
     color: #23c112;
 }
 
-#weather-grid{
+#weather-grid {
+    display: grid;
+    grid-template-columns: 20rem 11rem 11rem 11rem 11rem;
+    grid-gap: 4rem;
+    padding-left: 17rem;
+    padding-top: 5rem;
+    
+}
 
+.weather-image-resize{
+    height: 10rem;
+}
+
+.today-weather-image{
+    height: 17rem;
+}
+
+.weather-grid-padding{
+    padding-top: 7rem;
 }

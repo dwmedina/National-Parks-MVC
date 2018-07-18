@@ -11,17 +11,39 @@
     <div>
         <h2>@Model.park.ParkName</h2>
         <h4>@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
+        <p>Year Founded: @Model.park.YearFounded</p>
         <p>Acreage: @Model.park.Acreage</p>
+        <p>Climate: @Model.park.Climate Miles of Trails: @Model.park.MilesOfTrail</p>
+        <p>Elevation: @Model.park.ElevationInFt Numer of Species: @Model.park.NumberOfSpecies</p>
         <p>Annual Visitors: @Model.park.AnnualVisitors</p>
+        <p>Number of Campsites: @Model.park.NumberOfCampsites<strong> Entry Fee:</strong>@Model.park.EntryFee</p>
         <p>@Model.park.Description</p>
-        
+
     </div>
 
     <div id="weather-grid">
+
         @foreach (var day in Model.weather)
         {
-            <img src="~/images/@(day.Forecast).png" />
-            <p>@day.Forecast</p>
+            if (day.FiveDayForecastValue == 1)
+            {
+
+                <div>
+                    <p><strong>Today</strong></p>
+                    <img class="today-weather-image" src="~/images/@(day.Forecast).png" />
+                    <p>High: @day.High Low: @day.Low</p>
+                    <p>@Model.ProvideRecommendation(@day)</p>
+                </div>
+            }
+            else
+            {
+                <div class="weather-grid-padding">
+                    <img class="weather-image-resize" src="~/images/@(day.Forecast).png" />
+                    <p>High: @day.High Low: @day.Low</p>
+                </div>
+            }
+
         }
+
     </div>
 </div>
