@@ -35,3 +35,22 @@ body {
         display: none;
     }
 }
+
+/*** Site Banner ***/
+.navbar-inverse {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+#menu-bar {
+    height: 5rem;
+    background-color: #23c112;
+}
+
+#banner-logo {
+    height: 7rem;
+}
+
+#white-font {
+    color: #fff;
+}
