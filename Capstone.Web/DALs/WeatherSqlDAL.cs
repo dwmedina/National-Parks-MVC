@@ -35,6 +35,14 @@ namespace Capstone.Web.DALs
 					{
 						weather.Add(MapToWeather(reader));
 					}
+
+					foreach (var day in weather)
+					{
+						if (day.Forecast == "partly cloudy")
+						{
+							day.Forecast = "partlyCloudy";
+						}
+					}
 				}
 			}
 			catch (SqlException ex)

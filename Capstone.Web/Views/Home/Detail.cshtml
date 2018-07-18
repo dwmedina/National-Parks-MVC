@@ -11,12 +11,16 @@
     <div>
         <h2>@Model.park.ParkName</h2>
         <h4>@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
+        <p>Acreage: @Model.park.Acreage</p>
+        <p>Annual Visitors: @Model.park.AnnualVisitors</p>
         <p>@Model.park.Description</p>
+        
     </div>
 
-    <div>
+    <div id="weather-grid">
         @foreach (var day in Model.weather)
         {
+            <img src="~/images/@(day.Forecast).png" />
             <p>@day.Forecast</p>
         }
     </div>
