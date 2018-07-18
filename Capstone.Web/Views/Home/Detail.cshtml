@@ -1,0 +1,23 @@
+﻿@model ParkWeatherModel
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+<div>
+    <img src="~/images/@(Model.park.ParkCode).jpg" />
+
+    <div>
+        <h2>@Model.park.ParkName</h2>
+        <h4>@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
+        <p>@Model.park.Description</p>
+    </div>
+
+    <div>
+        @foreach (var day in Model.weather)
+        {
+            <p>@day.Forecast</p>
+        }
+    </div>
+</div>

@@ -26,7 +26,7 @@ namespace Capstone.Web.DALs
 				{
 					conn.Open();
 
-					string sql = "SELECT * FROM weather;";
+					string sql = $"SELECT * FROM weather WHERE parkCode = '{parkCode}';";
 
 					SqlCommand cmd = new SqlCommand(sql, conn);
 					SqlDataReader reader = cmd.ExecuteReader();

@@ -11,6 +11,12 @@ namespace Capstone.Web.Models
 
 		public IList<Weather> weather { get; set; }
 
+		public ParkWeatherModel(Park park, IList<Weather> weather)
+		{
+			this.park = park;
+			this.weather = weather;
+		}
+
         private Dictionary<string, string> recommendation = new Dictionary<string, string>()
         {
             { "snow", "Pack some snowshoes." },

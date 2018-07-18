@@ -32,7 +32,9 @@ namespace Capstone.Web.Controllers
 			var park = dal.GetPark(parkCode);
 			var weather = weatherDal.GetAllWeather(parkCode);
 
-			return View();
+			var model = new ParkWeatherModel(park, weather);
+
+			return View(model);
 		}
 
       
