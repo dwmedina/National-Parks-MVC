@@ -12,10 +12,12 @@ namespace Capstone.Web.Controllers
     public class HomeController : Controller
     {
 		private IParkSqlDAL dal;
+		private IWeatherSqlDAL weatherDal;
 
-		public HomeController(IParkSqlDAL dal)
+		public HomeController(IParkSqlDAL dal, IWeatherSqlDAL weatherDal)
 		{
 			this.dal = dal;
+			this.weatherDal = weatherDal;
 		}
 
         public IActionResult Index()
@@ -24,6 +26,14 @@ namespace Capstone.Web.Controllers
 
             return View(parks);
         }
+
+		public IActionResult Detail(string parkCode)
+		{
+			var park = dal.GetPark(parkCode);
+			var weather = weatherDal.GetAllWeather(parkCode);
+
+			return View();
+		}
 
       
 

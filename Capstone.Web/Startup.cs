@@ -34,8 +34,10 @@ namespace Capstone.Web
 			services.AddDistributedMemoryCache();
 
 			services.AddTransient<IParkSqlDAL>(d => new ParkSqlDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
+			services.AddTransient<IWeatherSqlDAL>(d => new WeatherSqlDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

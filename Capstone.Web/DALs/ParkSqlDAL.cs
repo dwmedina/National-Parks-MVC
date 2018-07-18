@@ -46,7 +46,7 @@ namespace Capstone.Web.DALs
 
 		public Park GetPark(string parkCode)
 		{
-			throw new NotImplementedException();
+			return GetAllParks().FirstOrDefault(p => p.ParkCode == parkCode);
 		}
 
 		public Park MapToPark(SqlDataReader reader)
