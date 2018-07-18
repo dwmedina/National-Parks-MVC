@@ -12,7 +12,7 @@
             <img id="index-park-image" src="~/images/@(park.ParkCode).jpg" />
         </a>
         <div id="index-park-container">
-            <h3>@park.ParkName</h3>
+            <h3><a asp-controller="Home" asp-action="Detail" asp-route-id="@park.ParkCode" method="get" id="index-park-name">@park.ParkName</a></h3>
             <h4>Location: @park.State</h4>
             <p>@park.Description</p>
         </div>

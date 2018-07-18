@@ -62,3 +62,7 @@ body {
     grid-gap: 4rem;
     padding-top: 4rem;
 }
+
+#index-park-name {
+    color: #23c112;
+}
