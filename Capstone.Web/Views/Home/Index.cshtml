@@ -5,13 +5,17 @@
 }
 
 <h1>All Parks</h1>
-<div>
+<div id="all-park-grid">
     @foreach (var park in Model)
     {
         <a asp-controller="Home" asp-action="Detail" asp-route-id="@park.ParkCode" method="get">
-            <img src="~/images/@(park.ParkCode).jpg" />
+            <img id="index-park-image" src="~/images/@(park.ParkCode).jpg" />
         </a>
-
+        <div id="index-park-container">
+            <h3>@park.ParkName</h3>
+            <h4>Location: @park.State</h4>
+            <p>@park.Description</p>
+        </div>
     }
 </div>
 

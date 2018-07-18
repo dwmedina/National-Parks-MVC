@@ -54,3 +54,11 @@ body {
 #white-font {
     color: #fff;
 }
+
+/*** Index View ***/
+#all-park-grid {
+    display: grid;
+    grid-template-columns: 50rem 50rem;
+    grid-gap: 4rem;
+    padding-top: 4rem;
+}
