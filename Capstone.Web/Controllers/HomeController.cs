@@ -11,15 +11,19 @@ namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private const string Session_Key = "Temp_Type";
+
 		private IParkSqlDAL dal;
 		private IWeatherSqlDAL weatherDal;
 
+        
 		public HomeController(IParkSqlDAL dal, IWeatherSqlDAL weatherDal)
 		{
 			this.dal = dal;
 			this.weatherDal = weatherDal;
 		}
 
+        [HttpGet]
         public IActionResult Index()
         {
 			var parks = dal.GetAllParks();
@@ -27,13 +31,14 @@ namespace Capstone.Web.Controllers
             return View(parks);
         }
 
+        [HttpGet]
 		public IActionResult Detail(string parkCode)
 		{
 			var park = dal.GetPark(parkCode);
 			var weather = weatherDal.GetAllWeather(parkCode);
 
 			var model = new ParkWeatherModel(park, weather);
-
+            
 			return View(model);
 		}
 

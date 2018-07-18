@@ -11,11 +11,18 @@ namespace Capstone.Web.Models
 
 		public IList<Weather> weather { get; set; }
 
+        public bool IsFahrenheit { get; set; }
+
 		public ParkWeatherModel(Park park, IList<Weather> weather)
 		{
 			this.park = park;
 			this.weather = weather;
 		}
+
+        public string ProvideRecommendation(Weather weather)
+        {
+            return String.Join("", recommendation[weather.Forecast] + TempRecommend(weather.High, weather.Low));
+        }
 
         private Dictionary<string, string> recommendation = new Dictionary<string, string>()
         {

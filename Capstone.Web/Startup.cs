@@ -32,6 +32,7 @@ namespace Capstone.Web
             });
 
 			services.AddDistributedMemoryCache();
+            services.AddSession();
 
 			services.AddTransient<IParkSqlDAL>(d => new ParkSqlDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
 			services.AddTransient<IWeatherSqlDAL>(d => new WeatherSqlDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
