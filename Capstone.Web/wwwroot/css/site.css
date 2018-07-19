@@ -152,6 +152,17 @@ input:checked + .slider:before {
     display: flex;
 }
 
+#weather-position {
+    display: flex;
+    margin-bottom: -4.2rem;
+    margin-top: 2rem;
+    margin-left: -10rem;
+}
+
+#fahrenheit-button {
+    margin-left: 1rem;
+}
+
 #weather-preparation {
     align-items: center;
     flex-direction: column;
@@ -173,12 +184,25 @@ input:checked + .slider:before {
     height: 15rem;
 }
 
+/***  Survey Page  ***/
+#survey-header {
+    padding-top: 7rem;
+}
+
+.surveyLabel {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
 
 /**Survey Results**/
+#top-rated-parks {
+    padding-top: 7rem;
+}
 
-#survey-result-img{
+#survey-result-img {
     height: 33rem;
     width: 50rem;
+    padding-bottom: 1.5rem;
 }
 
 .flex-container {

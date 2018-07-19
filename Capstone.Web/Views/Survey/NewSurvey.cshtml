@@ -4,34 +4,34 @@
     ViewData["Title"] = "NewSurvey";
 }
 
-<h2>New Survey</h2>
+<h2 id="survey-header">Please Take Our National Parks Survey</h2>
 
 <form asp-controller="survey" asp-action="newsurvey" method="post">
-    <div>
+    <div class="surveyLabel">
         <label asp-for="ParkCode">What is your favorite National Park? </label>
         <select asp-for="ParkCode" asp-items="@ViewBag.Options"></select>
         <span asp-validation-for="ParkCode"></span>
     </div>
 
-    <div>
+    <div class="surveyLabel">
         <label asp-for="Email">Your e-mail: </label>
         <input asp-for="Email" />
         <span asp-validation-for="Email"></span>
     </div>
 
-    <div>
+    <div class="surveyLabel">
         <label asp-for="State">State of Residence: </label>
         <input asp-for="State" />
         <span asp-validation-for="State"></span>
     </div>
 
-    <div>
+    <div class="surveyLabel">
         <label asp-for="ActivityLevel"></label>
         <select asp-for="ActivityLevel" asp-items="Survey.activityLevels"></select>
         <span asp-validation-for="ActivityLevel"></span>
     </div>
 
-    <input type="submit" value="Submit" />
+    <input class="btn btn-default btn-sm" type="submit" value="Submit" />
 
 </form>
 

@@ -19,48 +19,49 @@
     <div id="weather-wrapper">
         <div id="weather-forecast">
             <form asp-controller="Home" asp-action="ToggleTemp" method="post" asp-route-parkCode="@Model.park.ParkCode">
-                <button>Celsius</button>
+                <button class="btn btn-primary btn-sm">Celsius</button>
                 <input type="hidden" value="celsius" name="preference" />
             </form>
             <form asp-controller="Home" asp-action="ToggleTemp" method="post" asp-route-parkCode="@Model.park.ParkCode">
-                <button>Fahrenheit</button>
+                <button class="btn btn-primary btn-sm" style="margin-left: 1rem;">Fahrenheit</button>
                 <input type="hidden" value="fahrenheit" name="preference" />
             </form>
-
-            @foreach (var day in Model.weather)
-            {
-                <div id="weather-preparation">
-                    @if (day.FiveDayForecastValue == 1)
-                    {
-                        <img id="today-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
-
-                        if (Model.TempPref == "C")
+            <div id="weather-position">
+                @foreach (var day in Model.weather)
+                {
+                    <div id="weather-preparation">
+                        @if (day.FiveDayForecastValue == 1)
                         {
-                            <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                            <img id="today-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
+
+                            if (Model.TempPref == "C")
+                            {
+                                <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                            }
+                            else
+                            {
+                                <p>High: @day.High °F / Low: @day.Low °F</p>
+                            }
+
+                            <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(day)</p>
                         }
                         else
                         {
-                            <p>High: @day.High °F / Low: @day.Low °F</p>
-                        }
+                            <img id="week-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
+                            if (Model.TempPref == "C")
+                            {
+                                <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                            }
+                            else
+                            {
+                                <p>High: @day.High °F / Low: @day.Low °F</p>
+                            }
 
-                        <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(day)</p>
-                    }
-                    else
-                    {
-                        <img id="week-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
-                        if (Model.TempPref == "C")
-                        {
-                            <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                            <p id="weather-info">@Model.ProvideRecommendation(day)</p>
                         }
-                        else
-                        {
-                            <p>High: @day.High °F / Low: @day.Low °F</p>
-                        }
-
-                        <p id="weather-info">@Model.ProvideRecommendation(day)</p>
-                    }
-                </div>
-            }
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

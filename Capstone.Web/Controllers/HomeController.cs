@@ -12,8 +12,7 @@ namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
     {
-        //private const string Session_Key = "Temp_Type";
-
+        // pull our data from the db
 		private IParkSqlDAL dal;
 		private IWeatherSqlDAL weatherDal;
 
@@ -35,6 +34,9 @@ namespace Capstone.Web.Controllers
         [HttpGet]
 		public IActionResult Detail(string parkCode)
 		{
+            // get the park by its unique code
+            // within the park, get all of its weather
+            // find out what the user preferences are
 			var park = dal.GetPark(parkCode);
 			var weather = weatherDal.GetAllWeather(parkCode);
 			string pref = HttpContext.Session.GetString("pref");
@@ -44,6 +46,11 @@ namespace Capstone.Web.Controllers
 				pref = "F";
 				HttpContext.Session.SetString("pref", pref);
 			}
+            // need to check if it's Fahrenheit so that we can toggle between types
+            else if (pref == "fahrenheit")
+            {
+                pref = "F";
+            }
 			else
 			{
 				pref = "C";
@@ -53,6 +60,7 @@ namespace Capstone.Web.Controllers
 
 			model.TempPref = pref;
             
+            // pass our ViewModel back into our View
 			return View(model);
 		}
 		
