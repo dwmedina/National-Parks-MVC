@@ -16,7 +16,7 @@
             </div>
             <div class="flex-container vertical">
                 <p><strong>Number of Votes:</strong> @kvp.Value</p>
-                <p>@(Model.Parks.FirstOrDefault(prop => prop.ParkCode == kvp.Key).ParkName)</p>
+                <p id="survey-result-name">@(Model.Parks.FirstOrDefault(prop => prop.ParkCode == kvp.Key).ParkName)</p>
                 <p>@(Model.Parks.FirstOrDefault(p => p.ParkCode == kvp.Key).Description)</p>
             </div>
         </div>
