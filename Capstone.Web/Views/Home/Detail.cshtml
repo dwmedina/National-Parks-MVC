@@ -19,6 +19,11 @@
 
     <div id="weather-wrapper">
         <div id="weather-forecast">
+            <label>Change Temperature Units</label>
+            <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
             @foreach (var day in Model.weather)
             {    
             <div id="weather-preparation">

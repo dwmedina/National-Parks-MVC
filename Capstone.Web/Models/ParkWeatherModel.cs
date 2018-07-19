@@ -11,7 +11,7 @@ namespace Capstone.Web.Models
 
 		public IList<Weather> weather { get; set; }
 
-        public bool IsFahrenheit { get; set; }
+        public bool IsCelsius { get; set; }
 
 		public ParkWeatherModel(Park park, IList<Weather> weather)
 		{
