@@ -87,15 +87,33 @@ body {
 }
 
 
-#weather-grid {
-    display: grid;
-    grid-template-columns: 22rem 15rem 15rem 15rem 15rem;
+#weather-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#weather-grid > img {
-    height: 15rem;
+#weather-forecast {
+    display: flex;
+}
+
+#weather-preparation {
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+#today-weather {
+    height: 22rem;
 }
 
 #weather-advisory {
     color: #f76f1b;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+}
+
+#week-weather {
+    height: 15rem;
 }

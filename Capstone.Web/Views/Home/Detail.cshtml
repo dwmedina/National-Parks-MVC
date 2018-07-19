@@ -17,11 +17,25 @@
         
     </div>
 
-    <div id="weather-grid">
-        @foreach (var day in Model.weather)
-        {
-            <img src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
-        }
-        <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(Model.weather[0])</p>
+    <div id="weather-wrapper">
+        <div id="weather-forecast">
+            @foreach (var day in Model.weather)
+            {    
+            <div id="weather-preparation">
+                @if (day.FiveDayForecastValue == 1)
+                {
+                    <img id="today-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
+                    <p>High: @day.High / Low: @day.Low</p>
+                    <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(day)</p>
+                }
+                else
+                {
+                    <img id="week-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
+                    <p>High: @day.High / Low: @day.Low</p>
+                    <p id="weather-info">@Model.ProvideRecommendation(day)</p>
+                }
+            </div>
+            }
+        </div>
     </div>
 </div>
