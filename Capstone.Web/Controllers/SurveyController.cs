@@ -39,5 +39,19 @@ namespace Capstone.Web.Controllers
 
 			return RedirectToAction("results", "survey");
 		}
+
+		public IActionResult Results()
+		{
+			Dictionary<string, int> surveyResults = dal.GetFavoriteParkBySurveys();
+
+			SurveyResultViewModel results = new SurveyResultViewModel()
+			{
+				Results = surveyResults,
+				Parks = parkDal.GetAllParks()
+			};
+			
+
+			return View(results);
+		}
     }
 }

@@ -18,7 +18,35 @@ namespace Capstone.Web.DALs
 
 		public Dictionary<string, int> GetFavoriteParkBySurveys()
 		{
-			throw new NotImplementedException();
+			Dictionary<string, int> output = new Dictionary<string, int>();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(connectionString))
+				{
+					conn.Open();
+
+					string sql = "SELECT COUNT(*) AS votes, parkCode FROM survey_result GROUP BY parkCode ORDER BY votes DESC, parkCode;";
+					SqlCommand cmd = new SqlCommand(sql, conn);
+
+					SqlDataReader reader = cmd.ExecuteReader();
+
+					while (reader.Read())
+					{
+						string parkCode = Convert.ToString(reader["parkCode"]);
+						int votes = Convert.ToInt32(reader["votes"]);
+
+						output.Add(parkCode, votes);
+					}
+				}
+			}
+			catch (SqlException ex)
+			{
+				throw;
+			}
+
+			return output;
+
 		}
 
 		public void SaveNewSurvey(Survey survey)
