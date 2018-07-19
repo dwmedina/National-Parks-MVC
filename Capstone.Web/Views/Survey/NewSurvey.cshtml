@@ -9,7 +9,7 @@
 <form asp-controller="survey" asp-action="newsurvey" method="post">
     <div class="surveyLabel">
         <label asp-for="ParkCode">What is your favorite National Park? </label>
-        <select asp-for="ParkCode" asp-items="@ViewBag.Options"></select>
+        <select asp-for="ParkCode" asp-items="@Model.AllParks"></select>
         <span asp-validation-for="ParkCode"></span>
     </div>
 

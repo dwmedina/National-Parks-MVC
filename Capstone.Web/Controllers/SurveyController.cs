@@ -18,17 +18,21 @@ namespace Capstone.Web.Controllers
 			this.dal = dal;
 			this.parkDal = parkDal;
 		}
-		
-		[HttpGet]
+
+        [HttpGet]
         public IActionResult NewSurvey()
         {
-			var parks = parkDal.GetAllParks();
+            // get our parks
+            IList<Park> parks = parkDal.GetAllParks();
 
-			var parkOptions = parks.Select(p => new SelectListItem() { Text = p.ParkCode, Value = p.ParkCode });
+            // create a new survey
+            Survey model = new Survey()
+            {
+                AllParks = ListIntoSelectList(parks)
+            };
 
-			ViewBag.Options = parkOptions;
-
-			return View();
+            // pass in our model
+			return View(model);
         }
 
 		[HttpPost]
@@ -53,5 +57,25 @@ namespace Capstone.Web.Controllers
 
 			return View(results);
 		}
+
+        public List<SelectListItem> ListIntoSelectList(IList<Park> parks)
+        {
+            List<SelectListItem> parkList = new List<SelectListItem>();
+
+            foreach (var park in parks)
+            {
+                // for each park that we have
+                SelectListItem temp = new SelectListItem()
+                {
+                    // take its name and its code and add it as a possible selection
+                    Text = park.ParkName, Value = park.ParkCode
+                };
+
+                parkList.Add(temp);
+            }
+
+            return parkList;
+        }
+
     }
 }

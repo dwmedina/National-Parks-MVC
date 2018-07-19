@@ -15,6 +15,8 @@ namespace Capstone.Web.Models
 		public string State { get; set; }
 		public string ActivityLevel { get; set; }
 
+        public List<SelectListItem> AllParks { get; set; }
+
 		public static List<SelectListItem> activityLevels = new List<SelectListItem>()
 		{
 			new SelectListItem() { Text = "Inactive" },
