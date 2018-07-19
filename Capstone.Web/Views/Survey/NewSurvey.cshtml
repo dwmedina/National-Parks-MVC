@@ -3,8 +3,12 @@
 @{
     ViewData["Title"] = "NewSurvey";
 }
+<div class="arches-container">
+    <img id="arches" src="~/images/arches.jpg" />
+    <div class="arches-centered">
+        <h2 id="survey-header">Please Take Our National Parks Survey</h2></div>
+    </div>
 
-<h2 id="survey-header">Please Take Our National Parks Survey</h2>
 
 <form asp-controller="survey" asp-action="newsurvey" method="post">
     <div class="surveyLabel">

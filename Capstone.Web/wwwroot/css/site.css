@@ -185,8 +185,27 @@ input:checked + .slider:before {
 }
 
 /***  Survey Page  ***/
+.arches-container {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.arches-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#arches {
+    width: 100%;
+    height: 45rem;
+}
+
 #survey-header {
     padding-top: 7rem;
+    padding-bottom: 1rem;
 }
 
 .surveyLabel {
