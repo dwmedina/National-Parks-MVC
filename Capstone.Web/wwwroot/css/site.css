@@ -168,3 +168,32 @@ input:checked + .slider:before {
 #week-weather {
     height: 15rem;
 }
+
+
+/**Survey Results**/
+
+#survey-result-img{
+    height: 33rem;
+    width: 50rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.horizontal{
+    flex-direction: row;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.flex-item {
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+}

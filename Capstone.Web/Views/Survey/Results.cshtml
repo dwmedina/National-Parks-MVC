@@ -4,5 +4,21 @@
     ViewData["Title"] = "Results";
 }
 
-<h2>Results</h2>
+<h2>Favorite Parks</h2>
 
+@foreach (KeyValuePair<string, int> kvp in Model.Results)
+{
+    @if (kvp.Value > 0)
+    {
+        <div class="flex-container horizontal">
+            <div>
+                <img id="survey-result-img" src="~/images/@(kvp.Key).jpg" />
+            </div>
+            <div class="flex-container vertical">
+                <p><strong>Number of Votes:</strong> @kvp.Value</p>
+                <p>@(Model.Parks.FirstOrDefault(prop => prop.ParkCode == kvp.Key).ParkName)</p>
+                <p>@(Model.Parks.FirstOrDefault(p => p.ParkCode == kvp.Key).Description)</p>
+            </div>
+        </div>
+    }
+}
