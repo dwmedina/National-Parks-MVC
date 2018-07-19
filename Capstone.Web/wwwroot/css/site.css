@@ -87,6 +87,15 @@ body {
 }
 
 
-#weather-grid{
+#weather-grid {
+    display: grid;
+    grid-template-columns: 22rem 15rem 15rem 15rem 15rem;
+}
 
+#weather-grid > img {
+    height: 15rem;
+}
+
+#weather-advisory {
+    color: #f76f1b;
 }

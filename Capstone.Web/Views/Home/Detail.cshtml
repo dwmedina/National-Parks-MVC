@@ -22,6 +22,6 @@
         {
             <img src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
         }
-        <p>Weather advisory: @Model.ProvideRecommendation(Model.weather[0])</p>
+        <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(Model.weather[0])</p>
     </div>
 </div>
