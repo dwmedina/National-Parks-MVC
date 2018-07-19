@@ -6,13 +6,13 @@
 
 <h2>Detail</h2>
 <div>
-    <img src="~/images/@(Model.park.ParkCode).jpg" />
+    <img id="detail-image" src="~/images/@(Model.park.ParkCode).jpg" alt="" />
 
     <div>
         <h2>@Model.park.ParkName</h2>
-        <h4>@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
-        <p>Acreage: @Model.park.Acreage</p>
-        <p>Annual Visitors: @Model.park.AnnualVisitors</p>
+        <h4 id="detail-quote">@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
+        <p><strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage)</p>
+        <p><strong>Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors)</p>
         <p>@Model.park.Description</p>
         
     </div>
@@ -20,8 +20,8 @@
     <div id="weather-grid">
         @foreach (var day in Model.weather)
         {
-            <img src="~/images/@(day.Forecast).png" />
-            <p>@day.Forecast</p>
+            <img src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
         }
+        <p>Weather advisory: @Model.ProvideRecommendation(Model.weather[0])</p>
     </div>
 </div>

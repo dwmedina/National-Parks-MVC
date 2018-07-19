@@ -21,7 +21,7 @@ namespace Capstone.Web.Models
 
         public string ProvideRecommendation(Weather weather)
         {
-            return String.Join("", recommendation[weather.Forecast] + TempRecommend(weather.High, weather.Low));
+            return String.Concat(recommendation[weather.Forecast] + " " + TempRecommend(weather.High, weather.Low));
         }
 
         private Dictionary<string, string> recommendation = new Dictionary<string, string>()

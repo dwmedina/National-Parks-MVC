@@ -63,9 +63,29 @@ body {
     padding-top: 4rem;
 }
 
+#index-park-image {
+    height: 33rem;
+    width: 50rem;
+}
+
 #index-park-name {
     color: #23c112;
 }
+
+/*** Detail View ***/
+#detail-image {
+    height: 40rem;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+#detail-quote {
+    padding: 4rem;
+    color: #6e7477;
+    font-style: italic;
+    text-align: center;
+}
+
 
 #weather-grid{
 
