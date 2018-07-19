@@ -13,29 +13,50 @@
         <p><strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage)</p>
         <p><strong>Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors)</p>
         <p>@Model.park.Description</p>
-        
+
     </div>
 
     <div id="weather-wrapper">
         <div id="weather-forecast">
-            <label>Change Temperature Units</label>
-            <label class="switch">
-                <input type="checkbox" name="temp-switcher"checked />
-                <span class="slider"></span>
-            </label>
+            @*<label class="switch">
+                    <input type="checkbox" name="temp-switcher" checked />
+                    <span class="slider"></span>
+                </label>*@
+            <form asp-controller="Home" asp-action="ToggleTemp" method="post" asp-route-parkCode="@Model.park.ParkCode">
+                <button>Celsius</button>
+                <input type="hidden" value="celsius" name="preference" />
+            </form>
+            
             @foreach (var day in Model.weather)
             {
             <div id="weather-preparation">
                 @if (day.FiveDayForecastValue == 1)
                 {
                     <img id="today-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
-                    <p>High: @day.High / Low: @day.Low</p>
+
+                    if (Model.TempPref == "C")
+                    {
+                        <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                    }
+                    else
+                    {
+                        <p>High: @day.High °F / Low: @day.Low °F</p>
+                    }
+
                     <p id="weather-advisory">Weather advisory: @Model.ProvideRecommendation(day)</p>
                 }
                 else
                 {
                     <img id="week-weather" src="~/images/@(day.Forecast).png" alt="@day.Forecast" />
-                    <p>High: @day.High / Low: @day.Low</p>
+                    if (Model.TempPref == "C")
+                    {
+                        <p> High: @day.HighC °C  Low: @day.LowC °C</p>
+                    }
+                    else
+                    {
+                        <p>High: @day.High °F / Low: @day.Low °F</p>
+                    }
+
                     <p id="weather-info">@Model.ProvideRecommendation(day)</p>
                 }
             </div>

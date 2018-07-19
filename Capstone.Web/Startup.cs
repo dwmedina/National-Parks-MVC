@@ -55,9 +55,11 @@ namespace Capstone.Web
             }
 
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+			app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+			app.UseSession();
+
+			app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
