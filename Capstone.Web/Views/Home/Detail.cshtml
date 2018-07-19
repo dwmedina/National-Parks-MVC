@@ -10,8 +10,11 @@
     <div>
         <h2>@Model.park.ParkName</h2>
         <h4 id="detail-quote">@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
-        <p><strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage)</p>
-        <p><strong>Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors)</p>
+        <p id="detail-park-info"><strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage) | <strong>Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors) |
+        <strong>Elevation: </strong>@String.Format("{0:n0}", Model.park.ElevationInFt) ft. | <strong>Miles of Trails:</strong> @String.Format("{0:n0}", Model.park.MilesOfTrail) |
+         <strong>Campsites: </strong>@String.Format("{0:n0}", Model.park.NumberOfCampsites) | <strong>Climate: </strong>@Model.park.Climate | <strong>Year Founded: </strong>@Model.park.YearFounded</p>
+        <h4><strong>Entry Fee: </strong> @Model.park.EntryFee.ToString("C")</h4>
+        <p></p>
         <p>@Model.park.Description</p>
 
     </div>

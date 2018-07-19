@@ -91,7 +91,14 @@ body {
     text-align: center;
 }
 
-.switch input { display: none;}
+#detail-park-info {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.switch input {
+    display: none;
+}
 
 .switch {
     position: relative;
