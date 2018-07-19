@@ -42,7 +42,10 @@ namespace Capstone.Web.Controllers
 			return View(model);
 		}
 
-      
+        /*private bool IsCelsius()
+        {
+
+        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
