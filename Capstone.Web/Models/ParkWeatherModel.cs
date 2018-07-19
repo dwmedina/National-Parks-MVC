@@ -26,27 +26,27 @@ namespace Capstone.Web.Models
 
         private Dictionary<string, string> recommendation = new Dictionary<string, string>()
         {
-            { "snow", "Pack some snowshoes." },
-            { "rain", "Bring your rain gear and waterproof shoes!" },
-            { "thunderstorms", "Seek shelter and avoid hiking on exposed ridges." },
-            { "sunny", "Pack some sunblock." },
-            { "cloudy", "Better pack a flashlight and umbrella." },
-            { "partlyCloudy", "Wear your favorite hat." }
+            { "snow", "Pack some snowshoes. " },
+            { "rain", "Bring your rain gear and waterproof shoes! " },
+            { "thunderstorms", "Seek shelter and avoid hiking on exposed ridges. " },
+            { "sunny", "Pack some sunblock. " },
+            { "cloudy", "Better pack a flashlight and umbrella. " },
+            { "partlyCloudy", "Wear your favorite hat. " }
         };
 
         public string TempRecommend(int high, int low)
         {
             if (high >= 75)
             {
-                return "Bring an extra gallon of water.";
+                return "Bring an extra gallon of water. ";
             }
             else if (high - low >= 20)
             {
-                return "Wear breathable layers of clothing.";
+                return "Wear breathable layers of clothing. ";
             }
             else if (low <= 20)
             {
-                return "Exposure to frigid temperatures is dangerous.  Please be careful.";
+                return "Exposure to frigid temperatures is dangerous.  Please be careful. ";
             }
             else
             {
