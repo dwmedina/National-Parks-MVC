@@ -29,9 +29,8 @@ namespace Capstone.Web.DALs
 				{
 					conn.Open();
 
-					string sql = "INSERT INTO survey_result VALUES (@surveyId, @parkCode, @emailAddress, @state, @activityLevel);";
+					string sql = "INSERT INTO survey_result VALUES (@parkCode, @emailAddress, @state, @activityLevel);";
 					SqlCommand cmd = new SqlCommand(sql, conn);
-					cmd.Parameters.AddWithValue("@surveyId", survey.SurveyId);
 					cmd.Parameters.AddWithValue("@parkCode", survey.ParkCode);
 					cmd.Parameters.AddWithValue("@emailAddress", survey.Email);
 					cmd.Parameters.AddWithValue("@state", survey.State);
