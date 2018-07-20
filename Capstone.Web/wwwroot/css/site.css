@@ -252,8 +252,15 @@ input:checked + .slider:before {
 }
 
 .surveyLabel {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: .5rem;
+}
+
+input {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 /**Survey Results**/
