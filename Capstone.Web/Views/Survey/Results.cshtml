@@ -4,7 +4,12 @@
     ViewData["Title"] = "Results";
 }
 
-<h2 id="top-rated-parks">Top Rated Parks</h2>
+<div class="marsh-container">
+    <img id="marsh" src="~/images/marsh-billings-rockefeller.jpg"/>
+    <div class="marsh-centered">
+        <h1 id="top-rated-parks">Top Rated Parks</h1>
+    </div>
+</div>
 
 @foreach (KeyValuePair<string, int> kvp in Model.Results)
 {
