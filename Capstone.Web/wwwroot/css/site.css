@@ -64,8 +64,8 @@ body {
 
 .acadia-centered {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 49%;
     transform: translate(-50%, -50%);
 }
 
@@ -77,6 +77,8 @@ body {
 #index-parks-header {
     padding-top: 7rem;
     padding-bottom: 1rem;
+    font-family: Cinzel;
+    font-weight: bold;
 }
 
 #all-park-grid {
@@ -93,9 +95,34 @@ body {
 
 #index-park-name {
     color: #23c112;
+    font-family: Cinzel;
+    font-weight: bold;
+}
+
+#index-park-container{
+    padding-top: 3.5rem;
 }
 
 /*** Detail View ***/
+
+.detail-container {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.detail-centered {
+    font-family: Cinzel;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#detail-image {
+    width: 100%;
+    height: 45rem;
+}
 
 #detail-image {
     height: 40rem;
@@ -108,6 +135,8 @@ body {
 }
 
 #detail-quote {
+    font-family: Caveat;
+    font-size: 4rem;
     padding: 4rem;
     color: #6e7477;
     font-style: italic;
@@ -314,5 +343,7 @@ input {
 
 #survey-result-name {
     color: #23c112;
+    font-family: Cinzel;
     font-weight: bold;
+    font-size: 2.5rem;
 }

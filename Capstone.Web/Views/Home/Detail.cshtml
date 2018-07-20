@@ -5,15 +5,23 @@
 }
 
 <div>
-    <img id="detail-image" src="~/images/@(Model.park.ParkCode).jpg" alt="" />
+    <div class="detail-container">
+        <img id="detail-image" src="~/images/@(Model.park.ParkCode).jpg" alt="" />
+        <div class="detail-centered">
+            <h2 id="detail-park-name"><strong>@Model.park.ParkName</strong></h2>
+        </div>
+    </div>
+
 
     <div>
-        <h2 id="detail-park-name">@Model.park.ParkName</h2>
-        <h4 id="detail-quote">@Model.park.InspirationalQuote -@Model.park.QuoteSource</h4>
+        
+        <p id="detail-quote">@Model.park.InspirationalQuote -@Model.park.QuoteSource</p>
         <hr />
-        <p id="detail-park-info"><strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage) | <strong class="pad-bold">Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors) |
-        <strong class="pad-bold">Elevation: </strong>@String.Format("{0:n0}", Model.park.ElevationInFt) ft. | <strong class="pad-bold">Miles of Trails:</strong> @String.Format("{0:n0}", Model.park.MilesOfTrail) |
-         <strong class="pad-bold">Campsites: </strong>@String.Format("{0:n0}", Model.park.NumberOfCampsites) | <strong class="pad-bold">Climate: </strong>@Model.park.Climate | <strong>Year Founded: </strong>@Model.park.YearFounded</p>
+        <p id="detail-park-info">
+            <strong>Acreage: </strong>@String.Format("{0:n0}", Model.park.Acreage) | <strong class="pad-bold">Annual Visitors: </strong>@String.Format("{0:n0}", Model.park.AnnualVisitors) |
+            <strong class="pad-bold">Elevation: </strong>@String.Format("{0:n0}", Model.park.ElevationInFt) ft. | <strong class="pad-bold">Miles of Trails:</strong> @String.Format("{0:n0}", Model.park.MilesOfTrail) |
+            <strong class="pad-bold">Campsites: </strong>@String.Format("{0:n0}", Model.park.NumberOfCampsites) | <strong class="pad-bold">Climate: </strong>@Model.park.Climate | <strong>Year Founded: </strong>@Model.park.YearFounded
+        </p>
         <hr />
         <h4><strong>Entry Fee: </strong> @Model.park.EntryFee.ToString("C")</h4>
         <p></p>
