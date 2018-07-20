@@ -39,6 +39,7 @@ namespace Capstone.Web.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult NewSurvey(Survey survey)
 		{
+            // validate and redirect the user
 			dal.SaveNewSurvey(survey);
 
 			return RedirectToAction("results", "survey");

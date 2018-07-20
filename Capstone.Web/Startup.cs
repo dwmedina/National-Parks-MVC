@@ -32,6 +32,8 @@ namespace Capstone.Web
             });
 
 			services.AddDistributedMemoryCache();
+            
+            // We need to add the Session to Startup before it can be saved
             services.AddSession();
 
 			services.AddTransient<IParkSqlDAL>(d => new ParkSqlDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
@@ -57,6 +59,7 @@ namespace Capstone.Web
             app.UseStaticFiles();
 			app.UseCookiePolicy();
 
+            // This is needed to save the user's choice of temperature
 			app.UseSession();
 
 			app.UseMvc(routes =>

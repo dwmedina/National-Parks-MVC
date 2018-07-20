@@ -4,7 +4,13 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1 id="index-parks-header">All Parks</h1>
+<div class="acadia-container">
+    <img id="acadia" src="~/images/acadia.jpg" />
+    <div class="acadia-centered">
+        <h2 id="index-parks-header">Select a Park for More Information</h2>
+    </div>
+
+</div>
 <div id="all-park-grid">
     @foreach (var park in Model)
     {
@@ -14,7 +20,7 @@
         <div id="index-park-container">
             <h3><a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode" method="get" id="index-park-name">@park.ParkName</a></h3>
             <h4>Location: @park.State</h4>
-            <p>@park.Description</p>
+                <p>@park.Description</p>
         </div>
     }
 </div>

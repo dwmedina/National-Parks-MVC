@@ -11,6 +11,8 @@ namespace Capstone.Web.Models
 
 		public IList<Weather> weather { get; set; }
 
+        // use a string rather than a bool
+        // it's easier to remember F / C types
         public string TempPref { get; set; }
 
 		public ParkWeatherModel(Park park, IList<Weather> weather)
@@ -21,6 +23,8 @@ namespace Capstone.Web.Models
 
         public string ProvideRecommendation(Weather weather)
         {
+            // use Concat, not Join
+            // Get the forecast as our Key and attach it to our recommendation with some whitespace
             return String.Concat(recommendation[weather.Forecast] + " " + TempRecommend(weather.High, weather.Low));
         }
 
@@ -34,6 +38,7 @@ namespace Capstone.Web.Models
             { "partlyCloudy", "Wear your favorite hat. " }
         };
 
+        // this needs to be separate as it's based on integers
         public string TempRecommend(int high, int low)
         {
             if (high >= 75)

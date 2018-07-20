@@ -56,8 +56,27 @@ body {
 }
 
 /*** Index View ***/
+.acadia-container {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.acadia-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#acadia {
+    width: 100%;
+    height: 45rem;
+}
+
 #index-parks-header {
     padding-top: 7rem;
+    padding-bottom: 1rem;
 }
 
 #all-park-grid {
@@ -84,6 +103,10 @@ body {
     padding-bottom: 2rem;
 }
 
+#detail-park-name {
+    text-align: center;
+}
+
 #detail-quote {
     padding: 4rem;
     color: #6e7477;
@@ -93,7 +116,19 @@ body {
 
 #detail-park-info {
     text-align: center;
-    padding-bottom: 1.5rem;
+    padding-bottom: .5rem;
+}
+
+.pad-bold {
+    padding-left: .5rem;
+}
+
+#detail-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    width: 40%;
 }
 
 .switch input {
@@ -174,6 +209,7 @@ input:checked + .slider:before {
     align-items: center;
     flex-direction: column;
     padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 #today-weather {

@@ -16,7 +16,7 @@ namespace Capstone.Web.Controllers
 		private IParkSqlDAL dal;
 		private IWeatherSqlDAL weatherDal;
 
-        
+        // create with DALs for convenience
 		public HomeController(IParkSqlDAL dal, IWeatherSqlDAL weatherDal)
 		{
 			this.dal = dal;
@@ -64,6 +64,7 @@ namespace Capstone.Web.Controllers
 			return View(model);
 		}
 		
+        // Set the Session within our HomeController
 		public IActionResult ToggleTemp(string parkCode, string preference)
 		{
 			HttpContext.Session.SetString("pref", preference);
